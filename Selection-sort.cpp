@@ -19,7 +19,7 @@ int main(){
    for(int i=0;i<n;i++){ cin >> arr[i];}
    
    selection_sort(arr,n);
-   cout<<"Sorted array";
+   cout<<"Sorted array: ";
    for(int i=0;i<n;++i){
     cout<<arr[i]<<" ";
    }
