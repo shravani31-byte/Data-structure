@@ -32,18 +32,45 @@
 // }
 
 // recursive function for sum of n numbers
+// #include<iostream>
+// using namespace std;
+// void f(int i, int sum){
+//     if(i<1){
+//         cout<<sum;
+//         return;
+//     }
+//     f(i-1,sum+i);
+// }
+// int main(){
+//     int i=0;
+//     int sum=0;
+//     cout<<"Enter the number to print sum:";cin>> i;
+//     f(i,sum);
+// }
+
+
+// Reversing a string
 #include<iostream>
 using namespace std;
-void f(int i, int sum){
-    if(i<1){
-        cout<<sum;
+void f(int i, int n,int arr[]){
+    if(i>=n/2){
         return;
     }
-    f(i-1,sum+i);
+    swap(arr[i],arr[n-i-1]);
+    f(i+1,n,arr);
 }
 int main(){
+    int n;
     int i=0;
-    int sum=0;
-    cout<<"Enter the number to print sum:";cin>> i;
-    f(i,sum);
+    cout<<"Enter th size of array:";cin>>n;
+    int arr[n]={};
+    cout<<"Enter the element of arrays:";
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+    f(0,n,arr);
+    cout<<"reverse string:";
+    for(int i=0;i<n;i++){
+        cout<<arr[i];
+    }
 }
